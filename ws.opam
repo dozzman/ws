@@ -1,0 +1,18 @@
+opam-version: "2.0"
+name: "ws"
+version: "~dev"
+synopsis: "Generic websocket implementation for OCaml"
+maintainer: "Dorian <dorian@vereia.com>"
+authors: "Dorian <dorian@vereia.com>"
+build: [
+  ["dune" "build" "-p" name]
+]
+depends: [
+  "base64"
+  "bitstring"
+  "bitstring.ppx"
+  "containers"
+  "ppx_deriving.show"
+  "sha"
+]
+dev-repo: "git+https://github.com/dozzman/ws.git"

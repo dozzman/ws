@@ -1,0 +1,21 @@
+lib: [
+  "_build/install/default/lib/ws/META" {"META"}
+  "_build/install/default/lib/ws/frame.ml" {"frame.ml"}
+  "_build/install/default/lib/ws/opam" {"opam"}
+  "_build/install/default/lib/ws/ws.a" {"ws.a"}
+  "_build/install/default/lib/ws/ws.cma" {"ws.cma"}
+  "_build/install/default/lib/ws/ws.cmi" {"ws.cmi"}
+  "_build/install/default/lib/ws/ws.cmt" {"ws.cmt"}
+  "_build/install/default/lib/ws/ws.cmx" {"ws.cmx"}
+  "_build/install/default/lib/ws/ws.cmxa" {"ws.cmxa"}
+  "_build/install/default/lib/ws/ws.cmxs" {"ws.cmxs"}
+  "_build/install/default/lib/ws/ws.dune" {"ws.dune"}
+  "_build/install/default/lib/ws/ws.ml" {"ws.ml"}
+  "_build/install/default/lib/ws/ws__.cmi" {"ws__.cmi"}
+  "_build/install/default/lib/ws/ws__.cmt" {"ws__.cmt"}
+  "_build/install/default/lib/ws/ws__.cmx" {"ws__.cmx"}
+  "_build/install/default/lib/ws/ws__.ml" {"ws__.ml"}
+  "_build/install/default/lib/ws/ws__Frame.cmi" {"ws__Frame.cmi"}
+  "_build/install/default/lib/ws/ws__Frame.cmt" {"ws__Frame.cmt"}
+  "_build/install/default/lib/ws/ws__Frame.cmx" {"ws__Frame.cmx"}
+]
