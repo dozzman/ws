@@ -125,8 +125,6 @@ module Make(Io: Io.S)(M_result : Monad_result.S with type E.t = string and type 
   let parse_masked_data len = function%bitstring
     | {| key : 4*8 : string; data : len lsl 3 : string |} ->
         let _list_key = [key.[0]; key.[1]; key.[2]; key.[3]] |> List.map int_of_char in
-        (*let unmasked_data =
-          String.mapi (fun i c -> c |> int_of_char |> (lxor) (List.nth list_key (i mod 4)) |> char_of_int) data in *)
         `Masked
           ( (key.[0] , key.[1] , key.[2] , key.[3])
           , data ) |> return
