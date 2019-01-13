@@ -21,6 +21,14 @@ open Cohttp_lwt_unix
 
 module Websocket = Ws.Make(Interface'_lwt.Io)
 
+let respond ?headers status message =
+  let len = String.length message |> Int64.of_int in
+  let res_f = Response.make ~encoding:(Transfer.Fixed len) ~status in
+  let res = match headers with
+      | Some headers -> res_f ~headers:(headers |> Header.of_list) ()
+      | None -> res_f () in
+    (res, fun _ oc -> Lwt_io.write oc message) |> return
+
 let ws_handler send =
   Some "Welcome to my websocket!" |> send
   >>= fun _ ->
@@ -38,17 +46,15 @@ let server =
           (if Ws.is_websocket_upgrade headers then
             match Websocket.upgrade headers with
               | Error e_headers ->
-                let res = Response.make ~status:`Bad_request ~headers:(e_headers |> Header.of_list) () in
-                (res, fun _ oc -> Lwt_io.close oc) |> return
+                let res = Response.make ~encoding:(Transfer.Unknown) ~status:`Bad_request ~headers:(e_headers |> Header.of_list) () in
+                (res, fun _ _ -> return_unit) |> return
               | Ok ok_headers ->
-                let res = Response.make ~status:`Switching_protocols ~headers:(ok_headers |> Header.of_list) () in
+                let res = Response.make ~encoding:(Transfer.Unknown) ~status:`Switching_protocols ~headers:(ok_headers |> Header.of_list) () in
                 (res, fun ic oc -> Websocket.handle_server ws_handler ic oc) |> return
           else
-            let res = Response.make ~status:`Bad_request () in
-            (res, fun _ oc -> Lwt_io.close oc) |> return)
+            respond `Bad_request "")
       | _ ->
-        let res = Response.make ~status:`Method_not_allowed () in
-          (res, fun _ oc -> Lwt_io.close oc) |> return
+        respond `Method_not_allowed "Only websocket protocol supported!"
   in
     Server.create ~mode:(`TCP (`Port 8000)) (Server.make_expert ~callback ())
 
