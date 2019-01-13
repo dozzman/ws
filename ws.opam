@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "ws"
-version: "~dev"
+version: "dev"
 synopsis: "Generic websocket implementation for OCaml"
 maintainer: "Dorian Peake <dorian@vereia.com>"
 authors: "Dorian Peake <dorian@vereia.com>"
