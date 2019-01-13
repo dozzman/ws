@@ -8,11 +8,10 @@ build: [
   ["dune" "build" "-p" name]
 ]
 depends: [
-  "base64"
-  "bitstring"
-  "bitstring.ppx"
-  "containers"
-  "ppx_deriving.show"
-  "sha"
+  "base64" {>= 2.3.0}
+  "bitstring" {>= 3.1.0}
+  "containers" {>= 2.4.0}
+  "ppx_deriving" {>= 4.2.1}
+  "sha" {>= 1.12}
 ]
 dev-repo: "git+https://github.com/dozzman/ws.git"
