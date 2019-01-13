@@ -1,5 +1,9 @@
-WS - Websocket (Server, client coming soon) Implementation for OCaml
-====================================================================
+WS
+==
+
+## Websocket Implementation for OCaml
+### (Server only, client coming soon)
+
 
 The following is an example for getting set websockets set up with cohttp + Lwt. Note that this example requires cohttp >= v2.0 which is unreleased (as of writing), but you can pull and pin the master branch with:
 ```
