@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "ws"
-version: "dev"
+version: "0.1"
 synopsis: "Generic websocket implementation for OCaml"
 maintainer: "Dorian Peake <dorian@vereia.com>"
 authors: "Dorian Peake <dorian@vereia.com>"
@@ -24,6 +24,6 @@ depends: [
   "containers" {>= "2.4"}
   "ppx_deriving" {>= "4.2.1"}
   "sha" {>= "1.12"}
-  "interface-prime" {>= "dev"}
+  "interface-prime" {>= "0.1"}
 ]
 dev-repo: "git+https://github.com/dozzman/ws.git"
