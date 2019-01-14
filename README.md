@@ -11,6 +11,11 @@ $ git clone git@github.com:mirage/ocaml-cohttp.git
 $ opam pin ocaml-cohttp
 ```
 
+Also the example depends on `interface-prime-lwt`:
+```
+$ opam install interface-prime-lwt
+```
+
 The example is also contained in `example/example_server.ml`.
 
 **Example:**
