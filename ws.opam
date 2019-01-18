@@ -18,6 +18,7 @@ tags: [
   "ws"
 ]
 depends: [
+  "ocaml" {>= "4.05"}
   "dune" {build & >= "1.6.2"}
   "base64" {>= "2.3.0"}
   "bitstring" {>= "3.1.0"}
