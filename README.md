@@ -7,13 +7,13 @@ WS
 
 The following is an example for getting set websockets set up with cohttp + Lwt. Note that this example requires `cohttp >= v2.0` *which is unreleased (as of writing)*, but you can pull and pin the master branch with:
 ```
-$ git clone git@github.com:mirage/ocaml-cohttp.git
-$ opam pin ocaml-cohttp
+git clone git@github.com:mirage/ocaml-cohttp.git
+opam pin ocaml-cohttp
 ```
 
 Also the example depends on `interface-prime-lwt`:
 ```
-$ opam install interface-prime-lwt
+opam install interface-prime-lwt
 ```
 
 The example is also contained in `example/example_server.ml`.
