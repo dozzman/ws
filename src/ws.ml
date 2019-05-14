@@ -43,7 +43,7 @@ module Make(Io : Interface'.Io.S) = struct
         let host = lowercase_header headers "host" in (* host header required but not used *)
           (match (version, host, key) with
             | Some "13", Some _, Some k ->
-                let accept_key = k ^ guid |> Sha1.string |> Sha1.to_bin |> B64.encode in
+                let accept_key = k ^ guid |> Sha1.string |> Sha1.to_bin |> Base64.encode_string in
                   Ok
                   [ ("upgrade", "websocket")
                   ; ("connection", "Upgrade")
